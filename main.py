@@ -19,7 +19,7 @@ security = HTTPBearer()
 
 
 # ============= AUTH HELPERS =============
-def get_current_user(credentials: security = Depends()):
+def get_current_user(credentials: HTTPBearer = Depends(security)):
     token = credentials.credentials   # Automatically extracts Bearer token
 
     try:
